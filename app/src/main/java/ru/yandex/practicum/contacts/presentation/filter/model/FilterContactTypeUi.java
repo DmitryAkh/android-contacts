@@ -22,12 +22,12 @@ public class FilterContactTypeUi implements ListDiffInterface<FilterContactTypeU
         return selected;
     }
 
-    public boolean theSameAs(ListDiffInterface<FilterContactTypeUi> other) {
-        if (other instanceof FilterContactTypeUi) {
-            FilterContactTypeUi otherUi = (FilterContactTypeUi) other;
-            return this.contactType == otherUi.contactType;
+    @Override
+    public boolean theSameAs(FilterContactTypeUi other) {
+        if (other == null) {
+            return false;
         }
-        return false;
+        return this.contactType == other.contactType;
     }
 
     @Override
